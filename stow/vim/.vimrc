@@ -52,7 +52,7 @@ set hlsearch
 " -----------------------------------------------------------------------------
 
 set noshowmode
-set noshowcmd
+set showcmd
 set noruler
 set laststatus=0
 
