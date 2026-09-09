@@ -1,0 +1,16 @@
+# =============================================================================
+# Machine-specific configuration
+# =============================================================================
+
+# Generic monitor fallback
+monitor = ,preferred,auto,1
+
+# Put machine-specific settings here.
+#
+# Examples:
+#
+# monitor = eDP-1,1920x1200@165,0x0,1
+#
+# bind = $mainMod, U, exec, bluetoothctl connect XX:XX:XX:XX:XX:XX
+#
+# bind = $mainMod, D, exec, /path/to/local/application
