@@ -1,0 +1,172 @@
+configuration {
+    modi: "drun";
+    show-icons: true;
+    drun-display-format: "{name}";
+
+    font: "JetBrainsMono Nerd Font 13";
+
+    display-drun: "";
+}
+
+
+/* =============================================================================
+ * Palette
+ * =============================================================================
+ */
+
+* {
+    background:     rgba(18, 18, 18, 0.82);
+    surface:        rgba(32, 32, 32, 0.72);
+    selected:       rgba(176, 176, 176, 0.12);
+
+    foreground:     #b0b0b0;
+    bright:         #c0c0c0;
+    muted:          #707070;
+
+    border-color:   rgba(176, 176, 176, 0.20);
+    active-border:  rgba(192, 192, 192, 0.38);
+
+    background-color: transparent;
+    text-color: @foreground;
+}
+
+
+/* =============================================================================
+ * Window
+ * =============================================================================
+ */
+
+window {
+    location: center;
+    anchor: center;
+
+    width: 480px;
+
+    background-color: @background;
+
+    border: 1px;
+    border-color: @border-color;
+    border-radius: 18px;
+
+    padding: 14px;
+}
+
+
+/* =============================================================================
+ * Main layout
+ * =============================================================================
+ */
+
+mainbox {
+    background-color: transparent;
+
+    spacing: 10px;
+
+    children: [
+        inputbar,
+        listview
+    ];
+}
+
+
+/* =============================================================================
+ * Search
+ * =============================================================================
+ */
+
+inputbar {
+    background-color: @surface;
+
+    border: 1px;
+    border-color: @border-color;
+    border-radius: 12px;
+
+    padding: 11px 14px;
+
+    children: [
+        entry
+    ];
+}
+
+entry {
+    background-color: transparent;
+
+    text-color: @bright;
+
+    placeholder: "Search...";
+    placeholder-color: @muted;
+}
+
+
+/* =============================================================================
+ * Applications
+ * =============================================================================
+ */
+
+listview {
+    background-color: transparent;
+
+    lines: 8;
+    columns: 1;
+
+    fixed-height: false;
+
+    scrollbar: false;
+
+    spacing: 3px;
+}
+
+
+/* =============================================================================
+ * Entries
+ * =============================================================================
+ */
+
+element {
+    background-color: transparent;
+
+    border: 1px;
+    border-color: transparent;
+    border-radius: 10px;
+
+    padding: 8px 10px;
+    spacing: 12px;
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color: @foreground;
+}
+
+element selected.normal {
+    background-color: @selected;
+
+    border-color: @active-border;
+
+    text-color: @bright;
+}
+
+element alternate.normal {
+    background-color: transparent;
+    text-color: @foreground;
+}
+
+
+/* =============================================================================
+ * Icons / text
+ * =============================================================================
+ */
+
+element-icon {
+    background-color: transparent;
+
+    size: 22px;
+}
+
+element-text {
+    background-color: transparent;
+
+    text-color: inherit;
+
+    vertical-align: 0.5;
+}

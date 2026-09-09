@@ -1,0 +1,62 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "source": "/home/koverlay/.local/share/fastfetch/cat1.txt",
+    "type": "file",
+    "height": 16,
+    "padding": { "top": 2 }
+  },
+  "display": {
+    "separator": " ",
+    "percent": {
+      "type": 1
+    }
+  },
+
+  "color": {
+    "percent": "245",
+    "temp": "245",
+    "bar": "242",
+    "battery": "245",
+    "disk": "245",
+    "memory": "245",
+    "swap": "245"
+  },
+
+  "modules": [
+
+
+    "break",
+    { "type": "title", "keyWidth": 10, "color": { "user": "245", "at": "242", "host": "245" } },
+    
+    "break",
+
+    { "type": "os",      "key": " ", "keyColor": "90" }, 
+    { "type": "kernel",  "key": " ", "keyColor": "90" },
+    { "type": "packages","format": "{} (pacman)", "key": " ", "keyColor": "90" },
+    { "type": "shell",   "key": " ", "keyColor": "90" },
+    { "type": "terminal","key": " ", "keyColor": "90" },
+    { "type": "wm",      "key": " ", "keyColor": "90" },
+
+    "break",
+
+    { "type": "disk", "key": " ", "keyColor": "90", "color": { "text": "245", "used": "245", "bar": "242" } },
+    { "type": "memory", "key": " ", "keyColor": "90", "format": "{3} / {1} ({2})" },
+    { "type": "swap", "key": " ", "keyColor": "90", "format": "{3} / {1} ({2})" },
+
+    { "type": "battery", "key": "󰁹 ", "keyColor": "90", "showRemainingTime": true, "showStatus": true },
+
+    { "type": "uptime",  "key": " ", "keyColor": "90" },
+    { "type": "datetime", "key": " ", "keyColor": "90" },
+
+    "break",
+
+    { "type": "bluetooth", "key": " ", "keyColor": "90" },
+    { "type": "media",   "key": "󰝚 ", "keyColor": "90" },
+    { "type": "player",  "key": " ", "keyColor": "90" },
+
+    "break",
+    "break",
+    "break"
+  ]
+}

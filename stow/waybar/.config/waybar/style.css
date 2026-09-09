@@ -1,0 +1,273 @@
+/* =============================================================================
+ * Waybar — monochrome
+ * =============================================================================
+ */
+
+@define-color background rgba(18, 18, 18, 0.78);
+@define-color background-hover rgba(42, 42, 42, 0.80);
+
+@define-color foreground #b0b0b0;
+@define-color bright     #c0c0c0;
+@define-color muted      #707070;
+
+@define-color border rgba(176, 176, 176, 0.18);
+@define-color border-active rgba(192, 192, 192, 0.35);
+
+@define-color error #a87070;
+
+
+/* -----------------------------------------------------------------------------
+ * Global
+ * -------------------------------------------------------------------------- */
+
+* {
+    font-family:
+        "JetBrainsMono Nerd Font",
+        "Symbols Nerd Font",
+        monospace;
+
+    font-size: 13px;
+
+    border: none;
+    border-radius: 0;
+
+    min-height: 0;
+
+    box-shadow: none;
+}
+
+
+/* Waybar itself is fully transparent.
+ * Only the three module groups have a background.
+ */
+window#waybar {
+    background: transparent;
+    color: @foreground;
+}
+
+
+/* -----------------------------------------------------------------------------
+ * Floating groups
+ * -------------------------------------------------------------------------- */
+
+.modules-left,
+.modules-center,
+.modules-right {
+    background: @background;
+
+    border: 1px solid @border;
+    border-radius: 14px;
+
+    margin: 0;
+    padding: 0 5px;
+}
+
+
+/* -----------------------------------------------------------------------------
+ * Modules
+ * -------------------------------------------------------------------------- */
+
+#custom-arch,
+#workspaces,
+#window,
+#clock,
+#pulseaudio,
+#network,
+#bluetooth,
+#cpu,
+#memory,
+#temperature,
+#battery,
+#tray {
+    color: @foreground;
+
+    background: transparent;
+
+    padding: 0 7px;
+}
+
+
+/* -----------------------------------------------------------------------------
+ * Arch
+ * -------------------------------------------------------------------------- */
+
+#custom-arch {
+    color: @bright;
+
+    font-size: 16px;
+
+    padding-left: 8px;
+    padding-right: 7px;
+}
+
+
+/* -----------------------------------------------------------------------------
+ * Separator
+ * -------------------------------------------------------------------------- */
+
+#custom-separator {
+    color: #505050;
+
+    padding: 0 2px;
+
+    font-size: 12px;
+}
+
+
+/* -----------------------------------------------------------------------------
+ * Workspaces
+ * -------------------------------------------------------------------------- */
+
+#workspaces {
+    padding: 0 2px;
+}
+
+#workspaces button {
+    color: @muted;
+
+    background: transparent;
+
+    padding: 1px 8px;
+    margin: 3px 1px;
+
+    border: 1px solid transparent;
+    border-radius: 10px;
+
+    min-width: 18px;
+
+    font-weight: 600;
+}
+
+#workspaces button:hover {
+    color: @foreground;
+
+    background: @background-hover;
+
+    border-color: @border;
+}
+
+#workspaces button.active {
+    color: @bright;
+
+    background: rgba(176, 176, 176, 0.10);
+
+    border-color: @border-active;
+}
+
+#workspaces button.urgent {
+    color: @error;
+
+    border-color: rgba(168, 112, 112, 0.45);
+}
+
+
+/* -----------------------------------------------------------------------------
+ * Active window
+ * -------------------------------------------------------------------------- */
+
+#window {
+    color: #909090;
+
+    padding-left: 8px;
+    padding-right: 10px;
+}
+
+
+/* -----------------------------------------------------------------------------
+ * Clock
+ * -------------------------------------------------------------------------- */
+
+#clock {
+    color: @bright;
+
+    font-weight: 600;
+
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+
+/* -----------------------------------------------------------------------------
+ * Right modules
+ * -------------------------------------------------------------------------- */
+
+#pulseaudio,
+#network,
+#bluetooth,
+#cpu,
+#memory,
+#temperature,
+#battery {
+    color: @foreground;
+}
+
+#pulseaudio.muted,
+#network.disconnected {
+    color: @muted;
+}
+
+#temperature.critical,
+#battery.critical {
+    color: @error;
+}
+
+#battery.warning {
+    color: #9a8880;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: @bright;
+}
+
+
+/* -----------------------------------------------------------------------------
+ * Hover
+ * -------------------------------------------------------------------------- */
+
+#pulseaudio:hover,
+#network:hover,
+#bluetooth:hover,
+#cpu:hover,
+#memory:hover,
+#temperature:hover,
+#battery:hover,
+#clock:hover {
+    color: @bright;
+
+    background: @background-hover;
+
+    border-radius: 9px;
+}
+
+
+/* -----------------------------------------------------------------------------
+ * Tray
+ * -------------------------------------------------------------------------- */
+
+#tray {
+    padding-left: 7px;
+    padding-right: 8px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+
+/* -----------------------------------------------------------------------------
+ * Tooltip
+ * -------------------------------------------------------------------------- */
+
+tooltip {
+    background: rgba(18, 18, 18, 0.94);
+
+    border: 1px solid @border;
+    border-radius: 12px;
+
+    color: @foreground;
+}
+
+tooltip label {
+    color: @foreground;
+}

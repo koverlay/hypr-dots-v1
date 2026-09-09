@@ -1,0 +1,25 @@
+# Shell behaviour
+shopt -s autocd
+shopt -s cdspell
+shopt -s checkwinsize
+shopt -s globstar
+
+# Load config modules
+for file in \
+	"$HOME/.config/bash/history.bash" \
+	"$HOME/.config/bash/aliases.bash" \
+	"$HOME/.config/bash/functions.bash" \
+	"$HOME/.config/bash/integrations.bash" \
+	"$HOME/.config/bash/prompt.bash"
+do
+	if [[ -r "$file" ]]; then
+		source "$file"
+	fi
+done
+
+unset file
+
+# Show system info when opening the first shell
+if (( SHLVL == 1 )) && command -v fastfetch >/dev/null 2>&1; then
+    fastfetch
+fi
