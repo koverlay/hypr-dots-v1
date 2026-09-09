@@ -1,0 +1,11 @@
+# Machine-specific Hyprland configuration
+stow/hypr/.config/hypr/local.conf
+
+# Temporary / backup files
+*.broken
+*.bak
+*.swp
+*~
+
+# Generated/local files
+.DS_Store
