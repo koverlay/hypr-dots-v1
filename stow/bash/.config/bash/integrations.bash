@@ -1,6 +1,6 @@
 # Bash completion
-if [[ -r /usr/share/bash-completion/bash_complteion ]]; then
-	source /usr/share/bash-completion/bash_completion
+if [[ -r /usr/share/bash-completion/bash_completion ]]; then
+    source /usr/share/bash-completion/bash_completion
 fi
 
 # Zoxide
