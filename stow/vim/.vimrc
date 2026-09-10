@@ -51,7 +51,7 @@ set hlsearch
 " UI
 " -----------------------------------------------------------------------------
 
-set noshowmode
+set showmode
 set showcmd
 set noruler
 set laststatus=0

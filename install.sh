@@ -207,7 +207,7 @@ mapfile -t STOW_PACKAGES < <(
 
 info "Installing dotfiles with GNU Stow"
 
-stow \
+stow --no-folding \
     -d "$STOW_DIR" \
     -t "$HOME" \
     "${STOW_PACKAGES[@]}"
