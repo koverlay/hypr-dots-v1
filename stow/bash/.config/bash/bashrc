@@ -19,7 +19,7 @@ done
 
 unset file
 
-# Show system info when opening the first shell
-if (( SHLVL == 1 )) && command -v fastfetch >/dev/null 2>&1; then
+# Show system info when opening an interactive shell
+if command -v fastfetch >/dev/null 2>&1; then
     fastfetch
 fi
